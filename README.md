@@ -1,5 +1,34 @@
 # 2025 QMUL Project Allocation MSc 
 
+## Creating the Index Page From Project TSV 
+
+The docs/index.md page is auto-generated from the tab-separated file at docs/data/Projects.tsv. No personal or project content is exposed in this README; only the column headers used for generation are shown.
+
+Columns present in docs/data/Projects.tsv (headers only):
+- Id
+- Start time
+- Completion time
+- Email
+- Name
+- Full name
+- Email address
+- School/Institute
+- URL of research lab or profile page
+- Would you like to specify a co-supervisor at this point?
+- Co-supervisor's full name
+- Co-supervisor's email address
+- Project title
+- Tick which programme(s) the project is suitable for:
+- What is the maximum number of students you could take under this project title?
+- Project description
+- Would this project be suitable for a part time student?
+
+Rough generation process:
+- Read docs/data/Projects.tsv (UTF-8, tab-delimited), treating the first row as headers.
+- Clean/normalise headers (trim whitespace, collapse line breaks in headers).
+- For each row, map fields by header and construct a Markdown section (e.g., title, supervisors, school, suitability, description).
+- Optionally group or filter by programme and/or school.
+- Write the composed content to docs/index.md before mkdocs build/serve.
 
 ### Setting up
 
