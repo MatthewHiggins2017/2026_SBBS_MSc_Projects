@@ -26,16 +26,17 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
     }
     
     # Start building markdown content with filtering UI
-    md_content = ["<h1 style='text-align: center; font-weight: bold; margin-bottom: 20px;'>2025 Project Allocation</h1>\n\n"]
+    md_content = ["<h1 style='text-align: center; font-weight: bold; margin-bottom: 20px; color: #000;'>2026 Project Allocation</h1>\n\n"]
     md_content.append(f"<p class='project-count'>Total Projects: <span id='project-count'>{len(projects)}</span></p>\n\n")
     
     # Add instructional bullet points
-    md_content.append(" <strong>Welcome to the 2025 MSc Project Selection for the Bioinformatics and AI in Biosciences programmes.</strong>\n")
+    md_content.append(" <strong>Welcome to the 2026 MSc Project Selection for the Bioinformatics and AI in Biosciences programmes.</strong>\n")
     md_content.append("<ul class='instructions'>\n")
     md_content.append("  <li>Please review the following projects and identify those that align with your interests.</li>\n")
     md_content.append("  <li>Use the <b>search bar</b> in the top right to filter projects by keywords.</li>\n")
     md_content.append("  <li>We strongly recommend contacting the project supervisor to <b>arrange a meeting</b> before applying.</li>\n")
-    md_content.append("  <li>Once you have reviewed all projects, please submit your choices via <b><a href='#' target='_blank'>this link</a><b>.</li>\n")
+    # Fix closing bold tag so the rest of the page is not bold
+    md_content.append("  <li>Once you have reviewed all projects, please submit your choices via <b><a href='#' target='_blank'>this link</a></b>.</li>\n")
     md_content.append("</ul>\n\n")
 
     # Filter + search UI
@@ -157,10 +158,12 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
                     md_content.append(f"**{formatted_field}:** {value.strip()}\n\n")
         
         md_content.append("</article>\n")
-        md_content.append("---\n")
     
     # Close the projects container
     md_content.append("\n</div>\n\n")
+
+    # Footer watermark credit
+    md_content.append("<p class='site-watermark'><em>This website was made by Matthew Higgins (<a href='mailto:m.higgins@qmul.ac.uk'>m.higgins@qmul.ac.uk</a>).</em></p>\n\n")
     
     # Add JavaScript for filtering and search integration
     md_content.append("<script>\n")
@@ -183,7 +186,7 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
     md_content.append("function applyFilters(){\n")
     md_content.append("  const projects = document.querySelectorAll('.project-card');\n")
     md_content.append("  let visible = 0;\n")
-    md_content.append("  let firstMatch = null;\n")
+    # Removed auto-scroll behavior: no need to track first match
     md_content.append("  \n")
     md_content.append("  projects.forEach(p=>{\n")
     md_content.append("    const passesFilter = currentFilter === 'all' || p.classList.contains('filter-' + currentFilter);\n")
@@ -192,7 +195,6 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
     md_content.append("    if(passesFilter && passesSearch){\n")
     md_content.append("      p.style.display = 'block';\n")
     md_content.append("      visible++;\n")
-    md_content.append("      if(!firstMatch) firstMatch = p;\n")
     md_content.append("    } else {\n")
     md_content.append("      p.style.display = 'none';\n")
     md_content.append("    }\n")
@@ -200,10 +202,6 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
     md_content.append("  \n")
     md_content.append("  document.getElementById('project-count').textContent = visible;\n")
     md_content.append("  \n")
-    md_content.append("  // Scroll to first match if search is active\n")
-    md_content.append("  if(currentSearchTerm && firstMatch){\n")
-    md_content.append("    firstMatch.scrollIntoView({behavior: 'smooth', block: 'center'});\n")
-    md_content.append("  }\n")
     md_content.append("}\n")
     md_content.append("\n")
     md_content.append("// Integrate with MkDocs search box in header\n")

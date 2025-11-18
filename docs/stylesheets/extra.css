@@ -151,6 +151,21 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Remove dark overlay when search is active */
+:root {
+    --md-overlay: transparent !important;
+}
+.md-overlay,
+.md-search__overlay,
+.md-header__overlay {
+    background: transparent !important;
+    opacity: 0 !important;
+    pointer-events: none !important; /* don't block clicks/scroll */
+}
+.md-search__overlay { /* extra safety: hide search overlay element */
+    display: none !important;
+}
+
 /* Filter container styling with glassmorphism */
 .filter-container {
     background: rgba(232, 220, 196, 0.6);
@@ -344,7 +359,9 @@ html {
     border-bottom: 2px solid rgba(45, 80, 22, 0.2);
     padding-bottom: 12px;
     margin-bottom: 20px;
-    font-size: 1.4em;
+    font-size: 1.5em;
+    font-weight: 800;
+    letter-spacing: 0.2px;
 }
 
 .project-card strong {
@@ -382,4 +399,13 @@ html {
     .tag {
         text-align: center;
     }
+}
+
+/* Footer watermark credit */
+.site-watermark {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.45);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin: 48px 0 8px;
 }
