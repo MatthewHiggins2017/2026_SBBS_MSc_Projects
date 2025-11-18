@@ -146,6 +146,17 @@ body, .md-container, .md-content {
     display: none !important;
 }
 
+/* Mobile-friendly search: show in-page box, hide header search */
+.mobile-only { display: none; }
+@media (max-width: 1200px) {
+    .mobile-only { display: flex; }
+    /* Hide header search completely to avoid overlap */
+    .md-header .md-search,
+    .md-header__inner .md-search,
+    .md-header .md-search__form { display: none !important; }
+    .search-box-wrapper { margin-top: 8px; }
+}
+
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;

@@ -335,6 +335,9 @@
 
 <div class='filter-container'>
   <h3>Browse & Filter Projects</h3>
+  <div class='search-box-wrapper mobile-only'>
+    <input id='search-box' type='text' placeholder='Search projects (e.g., python, machine learning, biology)...' oninput='searchProjects(this.value)' />
+  </div>
   <div class='filter-row'>
     <div class='buttons'>
       <button class='filter-btn active' onclick='filterProjects(this, "all")'>All</button>
@@ -496,18 +499,24 @@ function applyFilters(){
 
 // Integrate with MkDocs search box in header
 document.addEventListener('DOMContentLoaded', function(){
-  const searchInput = document.querySelector('.md-search__input');
-  if(searchInput){
-    searchInput.placeholder = 'Search projects (e.g., python, machine learning, biology)...';
-    searchInput.addEventListener('input', function(e){
+  // Header search (desktop)
+  const headerSearch = document.querySelector('.md-search__input');
+  if(headerSearch){
+    headerSearch.placeholder = 'Search projects (e.g., python, machine learning, biology)...';
+    headerSearch.addEventListener('input', function(e){
       searchProjects(e.target.value);
-      // Prevent default MkDocs search
       e.stopPropagation();
     });
-    // Clear default search behavior
-    searchInput.addEventListener('focus', function(){
+    headerSearch.addEventListener('focus', function(){
       const searchResult = document.querySelector('.md-search__output');
       if(searchResult) searchResult.style.display = 'none';
+    });
+  }
+  // Mobile on-page search
+  const mobileSearch = document.getElementById('search-box');
+  if(mobileSearch){
+    mobileSearch.addEventListener('input', function(e){
+      searchProjects(e.target.value);
     });
   }
 });
