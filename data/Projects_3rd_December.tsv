@@ -28,20 +28,20 @@ The student will use existing morphological images from hundreds of wasp and bee
 Social grooming in primates is probably the most intensely studied cooperative behaviour, but only with regard to who grooms whom in a primate group - a grooming bout is a grooming bout. However, when observing primates, it is clear that this is not the case for them. There are, for example, body parts that are reserved for certain partners; grooming speed and turn taking rules differ; and the process is interspersed with gestures, postural changes, and breaks that make every bout unique. These processes are too fine-grained for manual coding at a large scale, but ideal for machine learning applications because multi-animal pose estimation with software like DeepLabCut now comes with pretrained models that would allow researchers to understand behaviour at the finest scale without large, trained video datasets for the species in question.
 I have around 1,500 videos of sooty mangabeys (Cercocebus atys atys) grooming each other, mostly in pairs. All videos are known to contain grooming and pretrained DeepLabCut models can track the individuals in the videos, so the challenge is to make sense of the resulting data. Students will choose one social parameter of grooming interactions (e.g., who grooms, which body part is being groomed, when do breaks occur) and build analytical solutions that can capture this information in pose estimation data. You will learn about deep learning applications to animal tracking and pose estimation, about social interactions and cooperation, primate behaviour, and communication. This is proof-of-concept work - this would be the first project I am aware of that uses deep learning to extract valuable qualitative information about a social interaction type in primates."	Yes	B2006
 12	11/7/2025 11:28	11/7/2025 11:31	bty017@qmul.ac.uk	Matteo Fumagalli	Matteo Fumagalli	m.fumagalli@qmul.ac.uk	School of Biological and Behavioural Science	https://mfumagalli.github.io/	No			Using machine learning for genomic monitoring of malaria vectors in Africa	MSc Bioinformatics (~6 month project; may include AI);MSc AI in the Biosciences (~4 month project; must include AI)	2	Malaria is a serious tropical disease that affects humans and other animals. In humans, it is mainly caused by the Plasmodium falciparum parasite which is hosted by the female Anopheles mosquito. Infected female Anopheles mosquitoes introduce the parasites via their saliva into the bloodstream of the humans they bite. In mild malaria cases, symptoms include fever, headaches, vomiting and muscle aches while in extreme cases, symptoms could include jaundice, seizures, coma and could even lead to death. The inference of demographic histories of different organism populations, in recent years, has been made possible through the application of computational statistics methods on the genomic data of the organisms in question. These inferences range from estimating the past population sizes, past migration patterns or rates to their selection histories and in general have provided a wealth of information. A more comprehensive understanding of the genetic dynamics and migration patterns of Anopheles sp. mosquitoes and their demographic histories would provide more robust surveillance and control measures against these vectors, the pathogens they spread, and would aid to predicting their future demographic changes. Therefore, studying the genetic diversity of these mosquito populations across Africa would be beneficial to reducing the high disease burden of malaria on the continent. This research will focus on utilising machine learning deep learning to predict the migration and population size changes of insecticide resistant Anopheline mosquito populations on the African continent.	Yes	B2007
-13	11/7/2025 11:30	11/7/2025 11:57	qp241679@qmul.ac.uk	Rachel Parkinson	Rachel Parkinson	r.parkinson@qmul.ac.uk	School of Biological and Behavioural Science	https://rachelparkinson.github.io/	No			Large Language Model pipelines for living evidence synthesis in the biosciences	MSc AI in the Biosciences (~4 month project; must include AI)	2	" Overview
+13	11/7/2025 11:30	11/7/2025 11:57	qp241679@qmul.ac.uk	Rachel Parkinson	Rachel Parkinson	r.parkinson@qmul.ac.uk	School of Biological and Behavioural Science	https://rachelparkinson.github.io/	No			Large Language Model pipelines for living evidence synthesis in the biosciences	MSc AI in the Biosciences (~4 month project; must include AI)	2	"## Overview
 
 The volume of scientific literature is growing faster than humans can read it. In the biosciences, critical decisions about biodiversity loss, climate impacts, and human disease depend on integrating thousands of studies.  
 
-My group has developed a large-language-model (LLM) pipeline - [MetaBeeAI](https://github.com/MetaBeeAI) - to extract structured data from scientific papers automatically. It uses GPT-based models to identify species, compounds, methodologies, and outcomes, then converts this information into machine-readable datasets for meta-analysis.
+My group has developed a large-language-model (LLM) pipeline - **[MetaBeeAI](https://github.com/MetaBeeAI)** - to extract structured data from scientific papers automatically. It uses GPT-based models to identify species, compounds, methodologies, and outcomes, then converts this information into machine-readable datasets for meta-analysis.
 
 This project gives students the opportunity to apply and extend the system to tackle real problems in bioscience evidence synthesis. It combines practical machine-learning engineering (prompt design, benchmarking, data evaluation) with ecological and biological insight, and can be flexibly tailored to the student’s interests and background.
 
 ---
 
- Project options
+## Project options
 
- Option 1 – Building the “Living” MetaBeeAI Pipeline
-Transform the existing pipeline, benchmarked on bee–pesticide literature, into a living evidence synthesis system that automatically ingests new research articles as they are published.  
+### Option 1 – Building the “Living” MetaBeeAI Pipeline
+Transform the existing pipeline, benchmarked on bee–pesticide literature, into a **living evidence synthesis system** that automatically ingests new research articles as they are published.  
 Tasks include:  
 - Connecting to publication APIs (CrossRef, PubMed, Scopus)  
 - Implementing automated PDF retrieval and text chunking  
@@ -50,7 +50,7 @@ The student will benchmark model accuracy over time and visualise trends in the 
 
 ---
 
- Option 2 – Adapting MetaBeeAI to a New Domain
+### Option 2 – Adapting MetaBeeAI to a New Domain
 Extend the LLM framework to another bioscience topic chosen jointly with the supervisor.  
 The student will:  
 - Develop domain-specific prompt templates and ontologies  
@@ -60,25 +60,25 @@ The project culminates in a reproducible pipeline that can be reused across rese
 
 ---
 
- Option 3 – Evaluation and Optimisation of LLM Workflows
-For students with stronger computational interests, this variant focuses on systematic benchmarking and explainability.  
+### Option 3 – Evaluation and Optimisation of LLM Workflows
+For students with stronger computational interests, this variant focuses on **systematic benchmarking and explainability**.  
 Key activities:  
 - Test prompt-engineering strategies and context-window optimisation  
 - Compare different model families (e.g. GPT-4 vs open-weight LLMs)  
-- Develop quantitative metrics for evaluating performance, such as faithfulness, contextual precision, and recall
+- Develop quantitative metrics for evaluating performance, such as *faithfulness*, *contextual precision*, and *recall*
 
 ---
 
- Expected outcomes
+## Expected outcomes
 - A functional, modular LLM pipeline for automated literature extraction and synthesis  
 - Benchmarked results demonstrating accuracy, recall, and interpretability  
 - A cleaned dataset suitable for downstream ecological or biomedical modelling  
 
 ---
 
- Skills and impact
+## Skills and impact
 
-This project offers hands-on experience at the frontier of AI-for-Science, combining natural-language processing, data engineering, and bioscience domain expertise.  
+This project offers hands-on experience at the frontier of **AI-for-Science**, combining natural-language processing, data engineering, and bioscience domain expertise.  
 Students will gain highly transferable skills in:  
 - LLM application and prompt design  
 - Evidence synthesis and benchmarking workflows  
@@ -119,32 +119,32 @@ Students will be expected to have a solid coding knowledge, particularly in pyth
 19	11/19/2025 13:16	11/19/2025 13:25	btx484@qmul.ac.uk	Aravindan Ilangovan	Aravindan Ilangovan	a.ilangovan@qmul.ac.uk	School of Biological and Behavioural Science	https://www.ilangovan-lab.com/	No			Mechanistic studies of replication initiation in bacteria using cryogenic electron microscopy	MSc Bioinformatics (~6 month project; may include AI);MSc AI in the Biosciences (~4 month project; must include AI)	1	Bacterial DNA replication is initiated by the conserved protein DnaA, which recognises and remodels the chromosomal origin of replication. Despite decades of study, critical aspects of how DnaA assembles on oriC, melts duplex DNA, and coordinates subsequent helicase loading remains poorly understood. This MSc project aims to dissect the molecular mechanism of DnaA-mediated replication initiation using a combination of biochemical experiemts and structural/biophysical approaches. Understanding this process is essential, as replication initiation is tightly regulated, essential for cell growth, and represents a potential target for next-generation antibacterial therapeutics.	No	B2014
 20	11/19/2025 17:48	11/19/2025 18:05	btw695@qmul.ac.uk	Conrad Bessant	Conrad	c.bessant@qmul.ac.uk	School of Biological and Behavioural Science	https://bezzlab.github.io/	No			KINEPIK: A web app for kinase signalling data	MSc Bioinformatics (~6 month project; may include AI)	2	"Signalling between kinases, and between kinases and other proteins, is essential to many biological processes, including those that lead to disease. In recent years, phosphoproteomics has emerged as a valuable tool in understanding this kinase signalling (e.g. https://www.nature.com/articles/s41587-019-0391-9). As a newer area of bioinformatics, the data infrastructure is lacking compared to areas such as genomes or structural bioinformatics.
 
-Project aim
+**Project aim**
 The aim of this project is to develop a web app that brings together data needed to conduct computer-based kinase signalling research.
 
-What your project will involve
+**What your project will involve**
 We have already developed a database containing all the data needed for this app. These data include kinase-phosphosite relationships, phosphoproteomics data, and information about small molecule kinase inhibitors. A prototype API (implemented using Flask in Python) has been developed to access these data programmatically (see kinepik.org for details).
 
-Your project will involve three main steps
+**Your project will involve three main steps**
 1. Complete the API allowing programmatic access to all of the data in the KINEPIK database.
 2. Build a web interface to your API, allowing browsing and visualisation of your database via a graphical user interface. This could be implemented in Flask, React or maybe Streamlit.
 We aim to deploy the software on AWS to make it accessible to the public.
 
-About you
+**About you**
 You need to be extremely confident in Python, and interested in developing your database and web development skills. Knowledge of, or an interest in, protein kinases would be useful but not essential.
 
 Get in touch with Conrad (c.bessant@qmul.ac.uk) to find out more!"	No	B2015
 21	11/19/2025 18:06	11/19/2025 18:32	btw695@qmul.ac.uk	Conrad Bessant	Conrad Bessant	c.bessant@qmul.ac.uk	School of Biological and Behavioural Science	https://bezzlab.github.io/	No			Extraction of insights from patient experience data reported on social media for on-market medicines	MSc AI in the Biosciences (~4 month project; must include AI)	2	"The US inflation reduction act (IRA) threatens to disrupt pharmaceutical pricing and may have a significant impact on both treatment accessibility and industry profitability.
 
-Project aim
+**Project aim**
 
 The aim of this project is to determine whether AI-enabled analysis of social media posts can be used to derive patient experience data useful in the development of value and pricing positioning using patient experience data of on-market drugs. For example, social media data may help provide information on treatment satisfaction, medication adherence and persistence, switching behaviour, side effect profiles and their impact, individual preference in comparison to other treatments, impact on quality of life and activities of daily living.
 
-What your project will involve
+**What your project will involve**
 
 You will evaluate the ability of commercially available large languages models (LLMs) such as GPT, Claude and Gemini to explore the topics above. At the start of the project we will develop a more defined aim focussed on a specific medical condition. You will then use LLM APIs via Python to perform large scale comparisons between different LLMs and different prompting strategies to see how well they can extract the required insights from Reddit posts relating to the chosen condition. The project will benefit from input from Dr Bill Byrom, eClinical Product Strategist and eCOA Scientist at Signant Health.
 
-About you
+**About you**
 
 You need to be confident in Python, and keen to further improve your skills in this area. An interest in LLMs, especially prompt engineering and evaluation, is essential. An interest in medicine, particularly patient experience, is highly desirable.
 
