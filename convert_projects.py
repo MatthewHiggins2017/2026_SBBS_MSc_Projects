@@ -35,7 +35,7 @@ def convert_tsv_to_markdown(tsv_path: Path, output_path: Path):
     md_content.append("  <li>Use the <b>search and filter options below</b> to find projects by keywords or programme.</li>\n")
     md_content.append("  <li>We strongly recommend contacting the project supervisor to <b>arrange a meeting</b> before applying.</li>\n")
     # Fix closing bold tag so the rest of the page is not bold
-    md_content.append("  <li>Once you have reviewed all projects, please submit your choices via <b><a href='#' target='_blank'>this link</a></b>.</li>\n")
+    md_content.append("  <li>Once you have reviewed all projects, please submit your choices via <b><a href='https://forms.office.com/Pages/ResponsePage.aspx?id=kfCdVhOw40CG7r2cueJYFKvg-E8GH9tMslh7hj8OGVJUNE8zSVRQQVE0S0lOMTZJSEVaUkpEMlRFQS4u' target='_blank' rel='noopener noreferrer'>this link</a></b>.</li>\n")
     md_content.append("</ul>\n\n")
 
     # Filter + search UI
